@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clinic Demand Prediction System</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+
+    <div class="card shadow-lg p-4">
+
+        <h2 class="text-center text-primary mb-4">
+            Clinic Patient Prediction System
+        </h2>
+
+        <!-- INPUTS -->
+        <div class="row">
+
+            <div class="col-md-4">
+                <label>Exam Period</label>
+                <input type="number" id="exam_period" class="form-control">
+            </div>
+
+            <div class="col-md-4">
+                <label>Rainfall</label>
+                <input type="number" id="rainfall" class="form-control">
+            </div>
+
+            <div class="col-md-4">
+                <label>Temperature</label>
+                <input type="number" id="temperature" class="form-control">
+            </div>
+
+        </div>
+
+        <!-- BUTTON -->
+        <button class="btn btn-primary mt-4 w-100" onclick="predictPatients()">
+            Predict Patients
+        </button>
+
+        <!-- RESULT -->
+        <h4 class="text-center mt-4" id="result"></h4>
+
+        <!-- CHART -->
+        <canvas id="trendChart" class="mt-4"></canvas>
+
+    </div>
+
+</div>
+
+<!-- JS -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
